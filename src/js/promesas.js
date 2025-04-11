@@ -35,7 +35,7 @@ const promesaMedia = new Promise((resolve, reject) => {
     })
 
     const promesaRapida = new Promise((resolve, reject) => {
-        setTimeout(( ) => reject('promesa rapida'), 1000);
+        setTimeout(( ) => resolve('promesa rapida'), 1000);
         })
 
         export {
@@ -43,4 +43,15 @@ const promesaMedia = new Promise((resolve, reject) => {
             promesaLenta as default,
             promesaMedia,
             promesaRapida
+        }
+
+        export  const buscarHeroeAsync =  async (id) =>{
+            const heroe = heroes[id];
+        
+                if (heroe){
+                    return heroe
+                } else {
+                    throw Error (`No existe un heroe con el id ${id}`);
+                }
+
         }

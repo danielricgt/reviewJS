@@ -1,12 +1,4 @@
-import "./styles.css";
-import promesaLenta, { promesaMedia, promesaRapida } from "./js/promesas";
+import { obtenerHeroesArray } from '../src/js/await.js';
 
-// promesaLenta.then(console.log);
-// promesaMedia.then(console.log);
-// promesaRapida.then(console.log);
+obtenerHeroesArray().then(console.log)
 
-Promise.race([promesaLenta, promesaMedia, promesaRapida])
-  .then((mensaje) => {
-    console.log(mensaje);
-  })
-  .catch(console.warn);
